@@ -464,7 +464,7 @@
   text-align: center;
 }
 
-/* section04 style */
+/* Section 04 Style */
 #section04 {
   z-index: 999;
   position: relative;
@@ -510,7 +510,7 @@
 }
 
 #section04 .visual_container {
-  /* background: #ddd; */
+  /* background:#ddd; */
   position: absolute;
   text-align: center;
   left: 466px;
@@ -549,5 +549,315 @@
 
 #section04 .visual_container .img06 {
   text-align: right;
-  margin-right: 198px;
+  margin-right: 158px;
+}
+
+/* section 05 style */
+#section05 {
+  height: 1000vh;
+  z-index: 999;
+}
+
+.trigger-this-5 {
+  height: 100%;
+}
+
+.fix-this-5 {
+  height: 100vh;
+  position: relative;
+  display: flex;
+}
+
+.fix-this-5 .page {
+  height: 100vh;
+  width: 100vw; /* viewport height : 화면 가로 크기 */
+  position: relative;
+  background: #000;
+  flex-shrink: 0;
+  /* https://apost.dev/863/ */
+}
+
+#section05 .underbar {
+  position: absolute;
+  top: 88vh;
+  left: 5%;
+  z-index: 999;
+}
+
+#section05 .underbar img {
+  width: 90%;
+}
+
+#section05 .visual_container {
+  width: 1303px;
+  height: 575px;
+  position: relative;
+  left: -20px;
+  margin: auto;
+  padding-top: 190px;
+  box-sizing: content-box;
+}
+
+#section05 .page01 .visual_container .logo {
+  position: absolute;
+  top: 223px;
+  right: 410px;
+  animation: rotate_page01 10s linear infinite;
+}
+
+@keyframes rotate_page01 {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#section05 .page01 .keyboard {
+  position: absolute;
+  top: 210px;
+  left: 0;
+}
+
+#section05 .page01 .title {
+  width: 920px;
+  height: 370px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  text-align: right;
+}
+
+#section05 .page01 .visual_container .title > div {
+  transform: translateY(35px);
+  opacity: 0;
+  transition: all 1s;
+}
+
+#section05.on .page01 .visual_container .title > div {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#section05 .page01 .visual_container .title .chapter {
+  margin-right: 250px;
+  margin-bottom: 18px;
+}
+
+#section05 .page01 .visual_container .title .title01 {
+  margin-right: 90px;
+  margin-bottom: -18px;
+  transition-delay: 0.2s;
+}
+
+#section05 .page01 .visual_container .title .title02 {
+  margin-bottom: -8px;
+  transition-delay: 0.4s;
+}
+
+#section05 .page01 .visual_container .title .title03 {
+  margin-right: 60px;
+  margin-bottom: 17px;
+  transition-delay: 0.6s;
+}
+
+#section05 .page01 .visual_container .title .subtxt {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition-delay: 0.8s;
+}
+
+#section05 .page01 .visual_container .title .title04 {
+  margin-right: 97px;
+  transition-delay: 0.8s;
+}
+
+#section05 .page02 {
+  width: 1503px;
+}
+#section05 .page02 .visual_container {
+  padding-top: 200px;
+  display: flex;
+}
+#section05 .page02 .visual_container .txt {
+  margin-right: 129px;
+}
+
+#section05 .page02 .visual_container .txt div {
+  transform: translateY(35px);
+  opacity: 0;
+  transition: all 1s;
+}
+
+#section05 .page02.on .visual_container .txt div {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+#section05 .page02 .visual_container .txt .main {
+  margin-bottom: 237px;
+  transition-delay: 0.2s;
+}
+
+#section05 .page02 .visual_container .txt .sub {
+  width: 729px;
+  display: flex;
+  justify-content: space-between;
+  transition-delay: 0.4s;
+}
+
+#section05 .page02 .visual_container .video {
+  margin-right: 97px;
+}
+
+#section05 .page02 .visual_container .side {
+  padding-top: 165px;
+}
+
+#section05 .page03 {
+  background-image: url('../img/scroll_02/section03/background.png');
+}
+
+#section05 .page03 .side {
+  width: 1762px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+}
+
+#section05 .page03 .keyboard {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+#section05 .page03 .keyboard > img {
+  animation: up-down 1.4s infinite ease-in-out alternate;
+}
+
+@keyframes up-down {
+  from {
+    transform: translateY(60px);
+  }
+  to {
+    transform: translateY(-20px);
+  }
+}
+
+#section05 .page03 .txt {
+  padding-top: 400px;
+  text-align: center;
+}
+
+#section05 .page04 {
+  width: 2200px;
+  /*background: gray;*/
+}
+
+#section05 .page04 .visual_container {
+  width: 1491px;
+  height: 564px;
+  margin: 0 auto;
+  padding-top: 200px;
+  position: relative;
+  /*background: dodgerblue;*/
+}
+
+#section05 .page04 .visual_container .txt > div {
+  transform: translateY(35px);
+  opacity: 0;
+  transition: all 1s;
+}
+
+#section05 .page04.on .visual_container .txt > div {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+#section05 .page04 .visual_container .img {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  /*padding-top: 234px;*/
+  position: relative;
+}
+
+#section05 .page04 .visual_container .img .first {
+  margin-bottom: 112px;
+}
+
+#section05 .page04 .visual_container .txt .subtxt {
+  width: 452px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 440px;
+  padding-top: 200px;
+  transition-delay: 0.2s;
+}
+
+#section05 .page04 .visual_container .txt .title01 {
+  width: 450px;
+  position: absolute;
+  bottom: -12px;
+  left: -77px;
+  /*background: black;*/
+}
+
+#section05 .page04 .visual_container .title01 .txt01 {
+  margin-bottom: 16px;
+}
+
+#section05 .page04 .visual_container .title01 .txt02 {
+  text-align: right;
+}
+
+#section05 .page04 .visual_container .txt .title02 {
+  width: 558px;
+  position: absolute;
+  top: 0;
+  right: -110px;
+  padding-top: 175px;
+  /*background: black;*/
+  transition-delay: 0.5s;
+}
+
+#section05 .page04 .visual_container .title02 .txt01 {
+  margin-left: 45px;
+}
+
+#section05 .page04 .visual_container .title02 .txt02 {
+  text-align: left;
+}
+
+#section05 .page04 .visual_container .title02 .txt03 {
+  text-align: right;
+}
+
+#section05 .page04 .visual_container .arrow01 {
+  position: absolute;
+  left: -68px;
+  bottom: 150px;
+}
+
+#section05 .page04 .visual_container .arrow02 {
+  position: absolute;
+  right: -68px;
+  bottom: 236px;
+}
+
+#section05 .page05 {
+  position: relative;
+}
+
+#section05 .page05 .video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
