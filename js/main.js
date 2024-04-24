@@ -311,23 +311,57 @@ window.addEventListener('DOMContentLoaded', function () {
       // toggleClass: 'on', // 가로 스크롤 지점을 인식할 수 없음 - #section05 요소의 top과 bottom을 인식
     },
   });
-});
 
-// page 5 video controll up animation
-const video05 = document.querySelector('#sc05_video');
-gsap.to('#section05', {
-  scrollTrigger: {
-    trigger: '#section05',
-    start: '4500 top',
+  // page 5 video controll up animation
+  const video05 = document.querySelector('#sc05_video');
+  gsap.to('#section05', {
+    scrollTrigger: {
+      trigger: '#section05',
+      start: '4500 top',
+      scrub: true,
+      // markers: true,
+      onEnter: () => {
+        video05.play();
+      },
+
+      onLeaveBack: () => {
+        video05.currentTime = 0; // 비디오 재생 시간을 0으로 되돌림
+        video05.pause();
+      },
+    },
+  });
+
+  // 섹션 6 화면의 위치할 때 글자 슬라이드 업
+  gsap.to('#section06', {
+    scrollTrigger: {
+      trigger: '#section06',
+      start: 'top top',
+      pin: true,
+      scrub: true,
+      toggleClass: 'on',
+      markers: true,
+    },
+  });
+  // 섹션 6 화면 위치 시 스크롤 고정
+  gsap.to('.fix-this-6', {
+    scrollTrigger: {
+      trigger: '.trigger-this-6',
+      start: 'top top',
+      end: 'bottom bottom',
+      pin: true,
+      // markers: true,
+    },
+  });
+  let sec06 = gsap.timeline();
+  ScrollTrigger.create({
+    animation: sec06,
+    trigger: '#section06',
+    start: 'top top',
+    end: 'bottom bottom',
     scrub: true,
     markers: true,
-    onEnter: () => {
-      video05.play();
-    },
-
-    onLeaveBack: () => {
-      video05.currentTime = 0; // 비디오 재생 시간을 0으로 되돌림
-      video05.pause();
-    },
-  },
+  });
+  sec06.to('#section06 .side .left', { x: -1000 }, 0);
+  sec06.to('#section06 .side .right', { x: 1000 }, 0);
+  sec06.to('#section06 .underbar', { y: 1000 }, 0);
 });

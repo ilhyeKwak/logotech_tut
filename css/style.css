@@ -861,3 +861,125 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+/* section06 style */
+#section06 {
+  height: 1000vh;
+  background: black;
+  overflow: initial;
+  z-index: 10;
+}
+
+.trigger-this-6 {
+  height: 100%;
+}
+
+.fix-this-6 {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+#section06 .visual_container {
+  width: 1128px;
+  padding-top: 190px;
+  position: relative;
+  margin: 0 auto;
+  /*background: black;*/
+}
+
+#section06 .visual_container .square {
+  width: 1128px;
+  height: 160px;
+  position: relative;
+}
+
+#section06 .visual_container .square > div {
+  width: 1128px;
+  height: 160px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+#section06 .visual_container .square > div img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#section06 .visual_container .chapter {
+  padding-top: 190px;
+  position: absolute;
+  top: 115px;
+  left: 22px;
+  z-index: 1;
+}
+
+#section06 .visual_container .headset {
+  padding-top: 190px;
+  position: absolute;
+  top: -43px;
+  right: 28px;
+}
+
+#section06 .visual_container .headset img {
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 1s;
+}
+
+#section06.on .visual_container .headset img {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+#circle {
+  fill: black !important;
+}
+
+#section06 .visual_container .title {
+  padding-top: 190px;
+  width: 570px;
+  position: absolute;
+  top: 182px;
+  left: 0;
+  margin-left: 80px;
+  z-index: 5;
+  /*background: dodgerblue;*/
+}
+
+#section06 .visual_container .title .cover {
+  transform: translateY(35px);
+  opacity: 0;
+  transition: all 1s;
+}
+
+#section06.on .visual_container .title .cover {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+#section06 .side {
+  width: 1796px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#section06 .underbar {
+  position: absolute;
+  bottom: 60px;
+  left: 5%;
+  width: 90%;
+}
+
+#section06 .underbar img {
+  width: 100%;
+}
