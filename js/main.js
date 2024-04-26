@@ -223,16 +223,17 @@ window.addEventListener('DOMContentLoaded', function () {
     );
   });
 
-  // section05 page 5개의 길이를 계산
+  // section 05 page 5개의 길이를 계산
   let sectionCount = document.querySelectorAll('.fix-this-5 .page');
-  // console.log(sectionCountn);
+  // console.log(sectionCount);
   let sec05_total = 0;
 
   sectionCount.forEach((section) => {
-    sec05_total += section.clientWidth; //각각의page 가로크기 합산
+    sec05_total += section.clientWidth; // 각각의 page 가로크기 합산
   });
+
   // console.log(sec05_total);
-  // console.log(this.innerWidth);
+  // console.log(innerWidth);
 
   gsap.to('.fix-this-5', {
     x: -(sec05_total - innerWidth),
@@ -242,9 +243,10 @@ window.addEventListener('DOMContentLoaded', function () {
       end: 'bottom bottom',
       pin: true,
       scrub: true,
-      markers: true,
+      // markers: true,
     },
   });
+
   // page 1 text animation
   gsap.to('#section05', {
     scrollTrigger: {
@@ -260,10 +262,9 @@ window.addEventListener('DOMContentLoaded', function () {
   gsap.to('#section05 .page02', {
     scrollTrigger: {
       trigger: '#section05',
-      start: '-300 top',
+      start: '300 top',
       scrub: true,
       // markers: true,
-      // toggleClass: 'on',
       onEnter: () => {
         $('#section05 .page02').addClass('on');
       },
@@ -279,18 +280,20 @@ window.addEventListener('DOMContentLoaded', function () {
       // toggleClass: 'on', // 가로 스크롤 지점을 인식할 수 없음 - #section05 요소의 top과 bottom을 인식
     },
   });
+
   // page 3 text scroll up animation
   gsap.to('#section05 .page03 .txt', {
     y: -innerHeight * 2,
     scrollTrigger: {
       trigger: '#section05',
-      start: () => '+=' + innerHeight * 1.5, // 화면높이 길이의 하나 반 만큼 가로스크롤이 이동했을 때 start 마커가 하단에 나타남
+      start: () => '+=' + innerHeight * 1.5, // 화면 높이 길이의 하나 반 만큼 가로스크롤이 이동했을 때 start 마커가 하단에 나타남
       scrub: true,
-      markers: true,
+      // markers: true,
     },
   });
+
   // page 4 text animation
-  gsap.to('#section05 .page02', {
+  gsap.to('#section05 .page04', {
     scrollTrigger: {
       trigger: '#section05',
       start: '3000 top',
@@ -303,7 +306,7 @@ window.addEventListener('DOMContentLoaded', function () {
         $('#section05 .page04').addClass('on');
       }, // 화면 스크롤을 되돌릴때 스크럽 연결 - 없으면 on 클래스가 제거되지 않음
       onLeave: () => {
-        $('#section05 .page02').removeClass('on');
+        $('#section05 .page04').removeClass('on');
       },
       onLeaveBack: () => {
         $('#section05 .page04').removeClass('on');
@@ -312,7 +315,7 @@ window.addEventListener('DOMContentLoaded', function () {
     },
   });
 
-  // page 5 video controll up animation
+  // page 5 video controll animation
   const video05 = document.querySelector('#sc05_video');
   gsap.to('#section05', {
     scrollTrigger: {
@@ -331,17 +334,17 @@ window.addEventListener('DOMContentLoaded', function () {
     },
   });
 
-  // 섹션 6 화면의 위치할 때 글자 슬라이드 업
+  // 섹션 6 화면 위치할 때 글자 슬라이드 업
   gsap.to('#section06', {
     scrollTrigger: {
       trigger: '#section06',
       start: 'top top',
-      pin: true,
       scrub: true,
       toggleClass: 'on',
-      markers: true,
+      // markers: true,
     },
   });
+
   // 섹션 6 화면 위치 시 스크롤 고정
   gsap.to('.fix-this-6', {
     scrollTrigger: {
@@ -352,6 +355,7 @@ window.addEventListener('DOMContentLoaded', function () {
       // markers: true,
     },
   });
+
   let sec06 = gsap.timeline();
   ScrollTrigger.create({
     animation: sec06,
@@ -359,9 +363,221 @@ window.addEventListener('DOMContentLoaded', function () {
     start: 'top top',
     end: 'bottom bottom',
     scrub: true,
-    markers: true,
+    // markers: true,
   });
+
   sec06.to('#section06 .side .left', { x: -1000 }, 0);
   sec06.to('#section06 .side .right', { x: 1000 }, 0);
   sec06.to('#section06 .underbar', { y: 1000 }, 0);
+
+  // section 06 chapter image move animation
+  gsap.to('#section06 .visual_container .chapter', {
+    x: 480,
+    scrollTrigger: {
+      trigger: '#section06',
+      start: '1200 top',
+      end: '5000 bottom',
+      scrub: true,
+      // markers: true,
+    },
+  });
+
+  // section 06 sqare height 0 animation
+  gsap.to('#section06 .visual_container .square > div', {
+    height: 0,
+    scrollTrigger: {
+      trigger: '#section06',
+      start: '1200 top',
+      end: '7000 bottom',
+      scrub: true,
+      // markers: true,
+    },
+  });
+
+  // section 06 sqare height 0 animation
+  gsap.to('#section06 .visual_container .title', {
+    x: 180,
+    scrollTrigger: {
+      trigger: '#section06',
+      start: '1200 top',
+      end: '5000 bottom',
+      scrub: true,
+      // markers: true,
+    },
+  });
+
+  // section 06 headset move animation
+  gsap.to('#section06 .visual_container .headset', {
+    x: 1800,
+    scrollTrigger: {
+      trigger: '#section06',
+      start: '1200 top',
+      end: 'bottom bottom',
+      scrub: true,
+      // markers: true,
+    },
+  });
+
+  // section 06 headset text scale up animation
+  gsap.to('#title_svg', {
+    scale: 60,
+    y: 2400,
+    x: -200,
+    scrollTrigger: {
+      trigger: '#section06',
+      start: '5000 top',
+      end: 'bottom bottom',
+      scrub: true,
+      markers: true,
+    },
+  });
+
+  // section07  video controll animation
+  const video07 = document.querySelector('#sc07_video');
+  gsap.to('#section07', {
+    scrollTrigger: {
+      trigger: '#section07',
+      start: 'top top',
+      scrub: true,
+      toggleClass: 'on',
+      markers: true,
+      onEnter: () => {
+        video07.play();
+        $('#section07, .side').addClass('on');
+        $('#header').addClass('on');
+      },
+      onLeaveBack: () => {
+        video07.currentTime = 0;
+        $('#section07, .side').removeClass('on');
+        $('#header').removeClass('on');
+      },
+    },
+  });
+  // section07 fix on scroll
+  gsap.to('.fix-this-7', {
+    scrollTrigger: {
+      trigger: '.trigger-this-7',
+      start: 'top top',
+      end: 'bottom bottom',
+      scrub: true,
+      pin: true,
+      markers: true,
+    },
+  });
+  // section07 video scroll dowm animation
+  gsap.to('#section07 .video', {
+    scale: 0.8,
+    y: 15,
+    scrollTrigger: {
+      trigger: '#section07',
+      start: '1000 top',
+      end: 'bottom bottom',
+      scrub: true,
+      markers: true,
+    },
+  });
+  // section07 side image remove class on
+  gsap.to('#section07 .side', {
+    scrollTrigger: {
+      trigger: '#section07',
+      start: '1800 top',
+      end: 'bottom bottom',
+      scrub: true,
+      marker: true,
+      // marker: true,
+      onEnter: () => {
+        // 스크롤 트리거 요소의 시작 위치애 도달했을 떄
+        $('#section07, .side').removeClass('on');
+      },
+      // onEnter: () => {
+      //   // 스크롤 트리거 요소의 시작 위치에 역방향으로 도달했을 떄
+      //   $('#section07, .side').addClass('on');
+      // },
+      // onLeave: () => {
+      //   // 스크롤 트리거 요소의 끝 위치를 지났을 때
+      //   video07.currentTime = 0;
+      //   $('#section07, .side').removeClass('on');
+      // },
+      onLeaveBack: () => {
+        // 스크롤 트리거 요소의 끝 역방향으로 지났을 때
+        video07.currentTime = 0;
+        $('#section07, .side').addClass('on');
+      },
+    },
+  });
+  //section 08,09 title text slide up animation
+  function section0809title(section, position) {
+    gsap.to(section, {
+      scrollTrigger: {
+        trigger: section,
+        start: `${position} top`,
+        scrub: true,
+        markers: true,
+        toggleClass: 'on',
+      },
+    });
+  }
+
+  section0809title('#section08', '-300');
+  section0809title('#section09', '-500');
+  gsap.to('.fix-this-91', {
+    scrollTrigger: {
+      trigger: '.trigger-this-91',
+      start: 'top top',
+      end: 'bottom bottom',
+      scrub: true,
+      pin: true,
+      //markers: true,
+      onEnter: () => {
+        $('#header').addClass('on');
+      },
+      onLeaveBack: () => {
+        $('#header').removeClass('on');
+      },
+    },
+  });
+  gsap.to('#section091', {
+    scrollTrigger: {
+      trigger: '#section091',
+      start: '-300 top',
+      scrub: true,
+      toggleClass: 'on',
+      markers: true,
+    },
+  });
+
+  //section 091 mouse image animation
+  gsap.to('#section091 .mouse', {
+    x: 0,
+    y: -2000,
+    rotation: 90,
+    scrollTrigger: {
+      trigger: '#section091',
+      start: '500 top',
+      scrub: true,
+      // markers: true,
+    },
+  });
+  //section 10 horizontal scroll animation
+  const section10pages = document.querySelectorAll('#section10 .page');
+  // console.log(section10pages);
+  let sec10_total = 0;
+
+  section10pages.forEach((section) => {
+    sec10_total += section.clientWidth;
+  });
+
+  // console.log(sec10_total);
+
+  gsap.to('.fix-this-10', {
+    x: -(sec10_total - innerWidth),
+    scrollTrigger: {
+      trigger: '.trigger-this-10',
+      start: 'top top',
+      end: 'bottom bottom',
+      pin: true,
+      scrub: true,
+      // markers: true,
+    },
+  });
 });
